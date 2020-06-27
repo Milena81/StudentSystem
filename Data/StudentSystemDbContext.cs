@@ -13,7 +13,23 @@
         
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            builder
+                .Entity<StudentCourse>()
+                .HasKey(sc => new { sc.StudentId, sc.CourseId });
 
+            builder
+                .Entity<Student>()
+                .HasMany(s => s.Courses)
+                .WithOne(c => c.Student)
+                .HasForeignKey(c => c.StudentId);
+
+            builder
+                .Entity<Course>()
+                .HasMany(c => c.Students)
+                .WithOne(s => s.Course)
+                .HasForeignKey(s => s.CourseId);
+
+            base.OnModelCreating(builder);
         }
     }
 }
