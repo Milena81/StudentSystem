@@ -4,9 +4,17 @@
 
     public class StudentSystemDbContext : DbContext
     {
+        public DbSet<Student> Students { get; set; }
+
+        public DbSet<Course> Courses { get; set; }
+
+        public DbSet<Homework>  Homeworks { get; set; }
+
+        public DbSet<Resource> Resources { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder builder)
         {
-            builder.UseSqlServer("Server=HOME\\SQLEXPRESS;Database=StudentSystemDb;Integrated Sequrity=True;");
+            builder.UseSqlServer("Server=HOME\\SQLEXPRESS;Database=StudentSystemDb;Integrated Security=True;");
 
             base.OnConfiguring(builder);
         }
@@ -24,10 +32,29 @@
                 .HasForeignKey(c => c.StudentId);
 
             builder
+                .Entity<Student>()
+                .HasMany(s => s.Homeworks)
+                .WithOne(h => h.Student)
+                .HasForeignKey(h => h.StudentId);
+
+            builder
                 .Entity<Course>()
                 .HasMany(c => c.Students)
                 .WithOne(s => s.Course)
                 .HasForeignKey(s => s.CourseId);
+
+            builder
+                .Entity<Course>()
+                .HasMany(c => c.Resourses)
+                .WithOne(r => r.Course)
+                .HasForeignKey(r => r.CourseId);
+
+            builder
+                .Entity<Course>()
+                .HasMany(c => c.Homeworks)
+                .WithOne(h => h.Course)
+                .HasForeignKey(h => h.CourseId);
+
 
             base.OnModelCreating(builder);
         }

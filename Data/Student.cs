@@ -21,5 +21,7 @@
 
         //connect to table StudentCourse
         public List<StudentCourse> Courses { get; set; } = new List<StudentCourse>();
+
+        public List<Homework> Homeworks { get; set; } = new List<Homework>();
     }
 }

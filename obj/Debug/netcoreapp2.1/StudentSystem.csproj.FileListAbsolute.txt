@@ -6,3 +6,6 @@ c:\users\user\source\repos\StudentSystem\StudentSystem\obj\Debug\netcoreapp2.1\S
 c:\users\user\source\repos\StudentSystem\StudentSystem\obj\Debug\netcoreapp2.1\StudentSystem.csproj.CoreCompileInputs.cache
 c:\users\user\source\repos\StudentSystem\StudentSystem\obj\Debug\netcoreapp2.1\StudentSystem.AssemblyInfoInputs.cache
 c:\users\user\source\repos\StudentSystem\StudentSystem\obj\Debug\netcoreapp2.1\StudentSystem.AssemblyInfo.cs
+c:\users\user\source\repos\StudentSystem\StudentSystem\bin\Debug\netcoreapp2.1\StudentSystem.pdb
+c:\users\user\source\repos\StudentSystem\StudentSystem\obj\Debug\netcoreapp2.1\StudentSystem.dll
+c:\users\user\source\repos\StudentSystem\StudentSystem\obj\Debug\netcoreapp2.1\StudentSystem.pdb

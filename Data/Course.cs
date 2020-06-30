@@ -23,5 +23,6 @@
 
         public List<Resource> Resourses { get; set; } = new List<Resource>();
 
+        public List<Homework> Homeworks { get; set; } = new List<Homework>();
     }
 }
